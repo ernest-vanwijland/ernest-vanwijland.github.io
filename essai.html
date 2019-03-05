@@ -4,7 +4,7 @@
 	<script type = "text/javascript" src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
 	<script type="text/javascript">
 		$(function () {
-			$(.get("memoire.txt", function(data)) {
+			$.get("memoire.txt", function(data)) {
 				if(data) {
 					var lines = data.split('\n');
 					if(lines.length > 0) {
@@ -13,7 +13,7 @@
 						}
 					}
 				}
-			});
+			};
 		});
 	</script>
 	Coucou
