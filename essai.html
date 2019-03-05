@@ -1,22 +1,20 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<script>
-		var text = document.getElementById("inputText").value;
-		var textBlob = new Blob([text], {type:'text/plain'});
-		var fileName = "fichier.txt";
-		var downloadLink = document.createElement("a");
-		downloadLink.innterHTML = "Download File";
-		if(window.webkitURL != null) {
-			downloadLink.href = window.webkitURL.createObjectURL(textBlob);
-		}
-		else {
-			downloadLink.href = window.URL.createObjectURL(textBlob);
-			downloadLink.onclick = destroyClickedElement;
-			downloadLink.style.display = "none";
-			document.body.appendChild(downloadLink);
-		}
-		downloadLink.click();
+	<script type = "text/javascript" src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+	<script type="text/javascript">
+		$(function () {
+			$.get("memoire.txt", function(data)) {
+				if(data) {
+					var lines = data.split('\n');
+					if(lines.length > 0) {
+						for(var i = 0; i < lines.length; i++) {
+							console.log(i + ": " + lines[i]);
+						}
+					}
+				}
+			});
+		});
 	</script>
 </head>
 <body>
