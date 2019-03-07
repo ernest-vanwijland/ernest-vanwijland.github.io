@@ -7,14 +7,13 @@
 <body>
 	<script type = "text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
 	<script type="text/javascript">
-	var temps = 9;
+	var temps = 299;
 	function afficher() {
 		document.getElementById("chrono").innerHTML = "Temps = " + temps;
 		console.log(temps + '\n');
 		temps -= 1;
 	}
 	function expirer() {
-		afficher();
 		document.getElementById("fichier").innerHTML = "";
 		clearInterval(aff);
 		alert("TLE");
@@ -23,7 +22,7 @@
 		document.getElementById("fichier").innerHTML = "<a href='input' download>Fichier d'entrée</a>";
 		afficher();
 		aff = setInterval(afficher, 1000)
-		timer = setTimeout(expirer, 10000);
+		timer = setTimeout(expirer, 300000);
 	}
 	var lines = [];
 	$(function () {
