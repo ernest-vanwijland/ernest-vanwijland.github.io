@@ -1,19 +1,20 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="utf-8"></meta>
+	<meta charset="utf-8">
 	<title>Fibonacci</title>
-<head>
+</head>
 <body>
 	<script type = "text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
 	<script type="text/javascript">
-	var temps = 299;
+	var temps = 9;
 	function afficher() {
 		document.getElementById("chrono").innerHTML = "Temps = " + temps;
 		console.log(temps + '\n');
 		temps -= 1;
 	}
 	function expirer() {
+		afficher();
 		document.getElementById("fichier").innerHTML = "";
 		clearInterval(aff);
 		alert("TLE");
@@ -22,7 +23,7 @@
 		document.getElementById("fichier").innerHTML = "<a href='input' download>Fichier d'entrée</a>";
 		afficher();
 		aff = setInterval(afficher, 1000)
-		timer = setTimeout(expirer, 300000);
+		timer = setTimeout(expirer, 10000);
 	}
 	var lines = [];
 	$(function () {
