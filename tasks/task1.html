@@ -38,7 +38,7 @@
 		clearInterval(aff);
 		var output = document.forms["submission"]["reponse"].value.split('\n');
 		console.log(lines.length);
-		if(output.length+1 != lines.length) {
+		if(output.length != lines.length) {
 			alert("WA not same number of lines");
 			return true;
 		}
@@ -81,14 +81,16 @@
 		<h4>Out :</h4>
 		<p>3</p>
 		<p>5</p>
-		</code>
 		<p>8</p>
+		</code>
 	</div>
-	<p id = "chrono">Temps = 300</p>
+	<h1>Pour tester votre code :</h1>
+	<p>Le temps restant est affiché ci-dessous, le chrono se lance dès que vous cliquez sur 'Entrée'. Vous pourrez alors télécharger le fichier d'entrée et coller votre résultat dans l'espace fourni.</p>
+	<p id = "chrono">Temps restant : 300</p>
 	<button onclick = "commencer()">Entrée</button>
 	<p id="fichier"></p>
 	<form name = "submission" onsubmit = "return evaluer()">
-		Coller sortie ici : <textarea rows = "10" cols = "30" name = "reponse"></textarea>
+		<textarea rows = "10" cols = "30" name = "reponse"></textarea>
 		<br><input type = "submit" value = "Soumettre">
 	</form>
 </body>
