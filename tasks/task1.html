@@ -5,9 +5,54 @@
 	<title>Fibonacci</title>
 <head>
 <body>
+	<script type = "text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+	<script type="text/javascript">
+	var temps = 299;
+	function afficher() {
+		document.getElementById("chrono").innerHTML = "Temps = " + temps;
+		console.log(temps + '\n');
+		temps -= 1;
+	}
+	function expirer() {
+		clearInterval(aff);
+		alert("TLE");
+	}
+	function commencer() {
+		afficher();
+		aff = setInterval(afficher, 1000)
+		timer = setTimeout(expirer, 300000);
+	}
+	var lines = [];
+	$(function () {
+		$.get("output", function(data) {
+			lines = data.split('\n');
+			for(var i = 0; i < lines.length; i += 1) {
+				console.log(lines[i] + '\n');
+			}
+		});
+	});
+	function evaluer() {
+		clearTimeout(timer);
+		clearInterval(aff);
+		var output = document.forms["submission"]["reponse"].value.split('\n');
+		console.log(lines.length);
+		if(output.length != lines.length) {
+			alert("WA not same number of lines");
+			return true;
+		}
+		for(var i = 0; i < output.length; i += 1) {
+			if(lines[i] != output[i]) {
+				alert("WA case" + (i + 1));
+				return true;
+			}
+		}
+		alert("OK");
+		return true;
+	}
+	</script>
 	<h1>Fibonacci</h1>
 	<p>Soit F une fonction définie par récurrence sur les entiers de la manière suivante : F(0) = 0, F(1) = 1 et pour tout entier n supérieur ou égal à 2, F(n) = F(n-1) + F(n-2).</p>
-	<p>On vous donne T entiers n_1 et vous devez afficher F(n_1), ..., F(n_2) modulo 1e9 + 7.</p>
+	<p>On vous donne T entiers n_1, ... , n_T et vous devez afficher F(n_1), ..., F(n_T) modulo 1e9 + 7.</p>
 	<div id = "Entrée">
 		<h3>Entrée</h3>
 		<p>une ligne avec T un entier</p>
@@ -23,5 +68,11 @@
 		<p>n entre 0 et 1e18</p>
 		<p>5min par test</p>
 	</div>
+	<p id = "chrono">Temps = 300</p>
+	<button onclick = "commencer()">Entrée</button>
+	<form name = "submission" onsubmit = "return evaluer()">
+		Coller sortie ici : <textarea rows = "10" cols = "30" name = "reponse"></textarea>
+		<br><input type = "submit" value = "Soumettre">
+	</form>
 </body>
 </html>
