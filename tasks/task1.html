@@ -14,10 +14,12 @@
 		temps -= 1;
 	}
 	function expirer() {
+		document.getElementById("fichier").innerHTML = "";
 		clearInterval(aff);
 		alert("TLE");
 	}
 	function commencer() {
+		document.getElementById("fichier").innerHTML = "<a href='output' download>Fichier d'entrée</a>
 		afficher();
 		aff = setInterval(afficher, 1000)
 		timer = setTimeout(expirer, 300000);
@@ -70,6 +72,7 @@
 	</div>
 	<p id = "chrono">Temps = 300</p>
 	<button onclick = "commencer()">Entrée</button>
+	<p id="fichier"></p>
 	<form name = "submission" onsubmit = "return evaluer()">
 		Coller sortie ici : <textarea rows = "10" cols = "30" name = "reponse"></textarea>
 		<br><input type = "submit" value = "Soumettre">
