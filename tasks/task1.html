@@ -36,7 +36,7 @@
 		clearInterval(aff);
 		var output = document.forms["submission"]["reponse"].value.split('\n');
 		console.log(lines.length);
-		if(output.length != lines.length) {
+		if(output.length+1 != lines.length) {
 			alert("WA not same number of lines");
 			return true;
 		}
