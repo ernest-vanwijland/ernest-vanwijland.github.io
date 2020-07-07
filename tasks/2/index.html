@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Armées dans un DAG</title>
+</head>
+<body>
+	<h1>2 - Armées dans un DAG</h1>
+	<p>Du fait d'une sombre affaire de troubadours corrompus pour jouer de la vielle à roue à des intensités sonores insoutenables, vous entrez en guerre avec le Baron d'Algoréa. Vous disposez d'une carte représentant les villes et les routes (qui ne vont que dans un sens) reliant les villes entre elles de la zone que vous vous disputez.</p>
+	<p>Votre but est d'occuper le chateau du baron, vous êtes initialement dans votre chateau. Chaque ville est initialement soit occupée par un régiment à vous, soit par un régiment du baron, votre chateau contient quelques soldats à vous, et le chateau du baron quelques soldats du baron.</p>
+	<p>Vous vous déplacez avec votre armée, pour arriver au chateau du baron, en suivant les routes. Si vous arrivez à une ville que vous controlez, les soldats occupant la ville se joignent à votre armée. Sinon, la ville est occupée par les ennemis, et vous devez tuer les soldats ennemis, sachant que vous perdez un homme par ennemi tué. Si il y a plus d'ennemis que de soldats à vous, vous êtes capturé et avez perdu. Vous devez donc déterminer si c'est possible en choisissant le bon chemin, de partir de votre chateau et d'arriver au chateau du baron, sans être capturé.</p>
+	<p>Il y a <i>N</i> villes numérotées de <i>1</i> à <i>N</i>. Votre chateau correspond à la ville <i>1</i> et le chateau du baron correspond à la ville <i>N</i>. Il y a <i>M</i> routes à sens unique. De plus pour chaque ville <i>k</i>, on vous donne <i>p(k)</i> et <i>s(k)</i> tels que <i>p(k) = 1</i> si vous controlez la ville <i>k</i> et <i>2</i> sinon, et <i>s(k)</i> est le nombre de soldats occupant la ville <i>k</i>.</p>
+	<p>Il est garanti que <i>s(1) > 0</i> (vous avez des soldats avec vous dans votre chateau), que <i>p(1) = 1</i> (c'est à dire que vous controlez votre chateau), et que <i>p(N) = 2</i> (le baron controle son chateau). De plus, il est garanti qu'il n'est pas possible de retourner à une ville déjà visitée en suivant les routes (c'est-à-dire que le graphe formé par les villes ne contient pas de cycle).</p>
+	<div id = "Entrée">
+		<h3>Entrée</h3>
+		<p>une ligne avec deux entiers, <i>N</i> et <i>M</i></p>
+		<p>une ligne avec <i>N</i> entiers, <i>s(1), ..., s(N)</i></p>
+		<p>une ligne avec <i>N</i> entiers, <i>p(1), ..., p(N)</i></p>
+		<p><i>M</i> lignes avec deux entiers, <i>a</i> et <i>b</i>, signifiant qu'il y a une route de la ville <i>a</i> vers la ville <i>b</i></p>
+	</div>
+	<div id = "Sortie">
+		<h3>Sortie</h3>
+		<p>"OUI" si vous pouvez occuper le chateau ennemi sans être capturé, "NON" sinon</p>
+	</div>
+	<div id = "Contraintes">
+		<h3>Contraintes</h3>
+		<p>N entre 2 et 100</p>
+		<p>M entre 1 et 1000</p>
+		<p>1s et 256MB par test</p>
+	</div>
+	<div id = "Exemples">
+		<h3>Exemple 1</h3>
+		<p>Entrée :</p>
+		<pre>
+6 6
+5 5 2 20 4 2
+1 1 1 2 2 2
+1 2
+1 3
+2 4
+3 5
+4 6
+5 6
+		</pre>
+		<p>Sortie :</p>
+		<pre>
+OUI
+		</pre>
+		<h3>Exemple 2</h3>
+		<p>Entrée :</p>
+		<pre>
+6 6
+5 5 2 20 4 3
+1 1 1 2 2 2
+1 2
+1 3
+2 4
+3 5
+4 6
+5 6
+		</pre>
+		<p>Sortie :</p>
+		<pre>
+OUI
+		</pre>
+		<h3>Exemple 3</h3>
+		<p>Entrée :</p>
+		<pre>
+6 6
+5 5 2 20 6 2
+1 1 1 2 2 2
+1 2
+1 3
+2 4
+3 5
+4 6
+5 6
+		</pre>
+		<p>Sortie :</p>
+		<pre>
+NON
+		</pre>
+		<h3>Exemple 4</h3>
+		<p>Entrée :</p>
+		<pre>
+6 4
+5 5 2 20 4 2
+1 1 1 2 2 2
+1 2
+1 3
+4 6
+5 6
+		</pre>
+		<p>Sortie :</p>
+		<pre>
+NON
+		</pre>
+	</div>
+</body>
+</html>
+
