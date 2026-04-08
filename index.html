@@ -233,8 +233,14 @@
             
             <button class="btn-abstract" onclick="toggleAbstract('abs1', this)">Show Abstract</button>
             <div id="abs1" class="abstract-content">
-                We give a new dual fitting algorithm which gives improved approximation ratios of \(3+\ln 2 + \varepsilon\ (\approx 3.694)\) and \(4.9+\varepsilon\) for \(k\)-Means in Euclidean and general metrics respectively, significantly improving upon the previously known ratios of \(4+\varepsilon\) and \(5.83\) [Charikar, Cohen-Addad, Gao, Grandoni, Lee, and van Wijland, FOCS'25 and STOC'26]. In particular, our result for Euclidean \(k\)-Means breaks the hardness barrier of \(1+8/e\approx 3.94\) for Metric \(k\)-Means. Prior to our work, no such separation between general and Euclidean metrics was known for \(k\)-Median, \(k\)-Means, or Facility Location in terms of their approximability.<br><br>
+                We give a new dual fitting algorithm which gives improved approximation ratios of \(3+\ln 2 + \varepsilon\ (\approx 3.694)\) and \(4.9+\varepsilon\) for \(k\)-Means in Euclidean and general metrics respectively, significantly improving upon the previously known ratios of \(4+\varepsilon\) and \(5.83\) [Charikar, Cohen-Addad, Gao, Grandoni, Lee, and van Wijland, FOCS'25 and STOC'26]. In particular, our result for Euclidean \(k\)-Means breaks the hardness barrier of \(1+8/e\approx 3.94\) for Metric \(k\)-Means. Prior to our work, no such separation between general and Euclidean metrics was known for \(k\)-Median, \(k\)-Means, or Facility Location in terms of their approximability.<br>
                 Unlike prior dual fitting approaches for \(k\)-Means, our new dual fitting algorithm tightly accounts for dual payments while still facilitating an effective dual feasibility analysis. We introduce a new framework that uses spectral analysis for determining the approximation factor of our algorithm.
+            </div>
+
+            <div class="pub-tags">
+                <span class="pub-tag">Clustering</span>
+                <span class="pub-tag">Dual Fitting</span>
+                <span class="pub-tag">Approximation Algorithms</span>
             </div>
         </li>
 
@@ -251,18 +257,18 @@ The mentioned algorithm by Charikar et al. critically exploits a greedy Lagrangi
 <br>
 Our main contribution is a greedy LMP 4-approximation for Facility Location with squared <i>Euclidean</i> distances. Differently from Charikar et al., our algorithm sometimes decreases the dual variables, a quite uncommon feature for dual-based algorithms. This is critical in our dual-fitting analysis in order to exploit the specific properties of Euclidean metrics. For the \( (4+\varepsilon) \)-approximation for \( k \)-Means, we extend the framework by Cohen-Addad et al. by overcoming substantial technical challenges posed by decreased dual values.
             </div>
+
+            <div class="pub-tags">
+                <span class="pub-tag">Clustering</span>
+                <span class="pub-tag">Dual Fitting</span>
+                <span class="pub-tag">Approximation Algorithms</span>
+            </div>
         </li>
 
         <li>
             <a href="https://people.idsia.ch/~grandoni/Pubblicazioni/CCGGLW25focs.pdf" target="_blank" class="pub-title">An Improved Greedy Approximation for (Metric) \(k\)-Means</a>
             <div class="pub-authors">Charikar, Cohen-Addad, Gao, Grandoni, Lee, Van Wijland</div>
             <div class="pub-venue">FOCS 2025</div>
-
-            <div class="pub-tags">
-                <span class="pub-tag">k-Means</span>
-                <span class="pub-tag">Dual Fitting</span>
-                <span class="pub-tag">Approximation Algorithms</span>
-            </div>
             
             <button class="btn-abstract" onclick="toggleAbstract('abs3', this)">Show Abstract</button>
             <div id="abs3" class="abstract-content">
@@ -271,6 +277,12 @@ Our main contribution is a greedy LMP 4-approximation for Facility Location with
 In this paper, we present a polynomial-time \( 3+2\sqrt{2}+\varepsilon<5.83 \)-approximation algorithm for \( k \)-Means in general metrics. This substantially improves on the current-best \( (9+\varepsilon) \)-approximation in [Ahmadian, Norouzi-Fard, Svensson, Ward - FOCS'17, SICOMP'20], and even slightly improves on the \(5.92\)-approximation in [Cohen-Addad, Esfandiari, Mirrokni, Narayanan - STOC'22] for the Euclidean special case.
 <br>
 A natural approach for \( k \)-Means is to leverage Lagrangian Multiplier Preserving (LMP) approximations for the facility location problem. The previous best results for \( k \)-Means build upon an adaptation of an LMP \(3\)-approximation for facility location with metric connection costs in [Jain, Vazirani - J.ACM'01] based on a primal-dual method, rather than on the improved LMP greedy \(2\)-approximation for the same problem in [Jain, Mahdian, Markakis, Saberi, Vazirani - J.ACM'03]. The barrier to using the improved LMP algorithm was that no adaptation of this algorithm and its analysis to the case of squared metric connection costs was known (since squared distances violate triangle inequality). Our main contribution is overcoming this barrier by providing such an adaptation. This new LMP approximation algorithm is then combined with the framework recently introduced in [Cohen-Addad, Grandoni, Lee, Schwiegelshohn, Svensson - STOC'25] for the related (metric) \( k \)-Median problem.
+            </div>
+
+            <div class="pub-tags">
+                <span class="pub-tag">Clustering</span>
+                <span class="pub-tag">Dual Fitting</span>
+                <span class="pub-tag">Approximation Algorithms</span>
             </div>
         </li>
 
@@ -283,6 +295,12 @@ A natural approach for \( k \)-Means is to leverage Lagrangian Multiplier Preser
             <div id="abs4" class="abstract-content">
                 In the Euclidean \( k \)-traveling salesman problem (\( k \)-TSP), we are given \( n \) points in the \( d \)-dimensional Euclidean space, for some fixed constant \( d \geq 2 \), and a positive integer \( k \). The goal is to find a shortest tour visiting at least \( k \) points. We give an approximation scheme for the Euclidean \( k \)-TSP in time \( n \cdot 2^{O(1/\varepsilon^{d-1})} \cdot (\log n)^{2d^2 \cdot 2^d} \). This improves Arora's approximation scheme of running time \( n \cdot k \cdot (\log n)^{\left(O\left(\sqrt{d}/\varepsilon\right)\right)^{d-1}} \) [J. ACM 1998]. Our algorithm is Gap-ETH tight and can be derandomized by increasing the running time by a factor \( O(n^d) \).
             </div>
+
+            <div class="pub-tags">
+                <span class="pub-tag">Vehicle Routing</span>
+                <span class="pub-tag">Computational Geometry</span>
+                <span class="pub-tag">Approximation Algorithms</span>
+            </div>
         </li>
 
         <li>
@@ -294,6 +312,12 @@ A natural approach for \( k \)-Means is to leverage Lagrangian Multiplier Preser
             <div id="abs5" class="abstract-content">
                 We study the problem of allocating a set of indivisible goods among a set of agents with two-value additive valuations. In this setting, each good is valued either \(1\) or \( p/q \) for some fixed coprime numbers \( p, q \in \mathbb{N} \) such that \( 1 \leq q < p \). Our goal is to find an allocation that maximizes the Nash social welfare (NSW), that is, the geometric mean of the valuations of the agents. In this work, we give a complete characterization of polynomial-time tractability of NSW maximization that solely depends on the value of \( q \). We start by providing a rather simple polynomial-time algorithm to find a maximum NSW allocation when the valuation functions are integral, that is, \( q = 1 \). We then exploit more involved techniques to get an algorithm that produces a maximum NSW allocation for the half-integral case, that is, \( q = 2 \). Finally, we show it is NP-hard to compute an allocation with maximum NSW whenever \( q \geq 3 \).
             </div>
+
+            <div class="pub-tags">
+                <span class="pub-tag">Fair Division</span>
+                <span class="pub-tag">Game Theory</span>
+                <span class="pub-tag">Approximation Algorithms</span>
+            </div>
         </li>
 
         <li>
@@ -304,6 +328,12 @@ A natural approach for \( k \)-Means is to leverage Lagrangian Multiplier Preser
             <button class="btn-abstract" onclick="toggleAbstract('abs6', this)">Show Abstract</button>
             <div id="abs6" class="abstract-content">
                 We consider the problem of maximizing the Nash social welfare when allocating a set \( G \) of indivisible goods to a set \( N \) of agents. We study instances, in which all agents have 2-value additive valuations: The value of every agent for every good is either \( p \) or \( q \), where \( p \) and \( q \) are integers and \( p \ge 2 \). In terms of approximation, we present positive and negative results for general \( p \) and \( q \). We show that our algorithm obtains an approximation ratio of at most \(1.0345\). Moreover, we prove that the problem is APX-hard, with a lower bound of \(1.000015\) achieved at \( p/q = 4/5 \).
+            </div>
+
+            <div class="pub-tags">
+                <span class="pub-tag">Fair Division</span>
+                <span class="pub-tag">Game Theory</span>
+                <span class="pub-tag">Approximation Algorithms</span>
             </div>
         </li>
 
