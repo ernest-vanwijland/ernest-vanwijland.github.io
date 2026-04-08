@@ -1,137 +1,303 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <title>Ernest van Wijland | Personal Webpage</title>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+<head>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Ernest's personnal page.">
-    <meta name="author" content="Ernest">
-    <meta name="robots" content="index, follow">
-	  
-    <link rel="shortcut icon" type="image/png" href="./favicon.ico"> 
-        
-
-    <!-- CSS -->
-    <link type="text/css"  href="dist/css/bootstrap.min.css" rel="stylesheet">    
-    <style type="text/css">
-      body {
-        padding-top: 60px;
-      }
-    </style>
-
-	<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <title>Ernest van Wijland - Personal Webpage</title>
+    
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-  </head>
-  
 
-  <body>
-    <!-- Navigation bar -->
-    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-      <div class="container">
-	<div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="./index.html">Ernest van Wijland</a>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --link-color: #2980b9;
+            --bg-color: #fcfcfc;
+            --text-color: #333333;
+            --border-color: #e0e0e0;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        /* Profile Section */
+        .profile-section {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            align-items: center;
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            margin-bottom: 40px;
+        }
+
+        .profile-img img {
+            width: 220px;
+            height: auto;
+            border-radius: 50%;
+            border: 4px solid #f0f0f0;
+        }
+
+        .profile-info {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .profile-info h1 {
+            font-family: 'Lora', serif;
+            color: var(--primary-color);
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
+
+        .profile-info p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+
+        .contact-info table {
+            margin-top: 15px;
+            font-size: 0.95em;
+        }
+
+        .contact-info td {
+            padding-bottom: 5px;
+        }
+
+        .contact-info strong {
+            color: var(--primary-color);
+        }
+
+        a {
+            color: var(--link-color);
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        a:hover {
+            color: #1a5276;
+            text-decoration: underline;
+        }
+
+        /* Section Headings */
+        h3 {
+            font-family: 'Lora', serif;
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 8px;
+            margin-top: 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+        }
+
+        h3 a {
+            font-family: 'Open Sans', sans-serif;
+            font-size: 0.6em;
+            font-weight: normal;
+        }
+
+        /* Lists for Publications and Teaching */
+        ul.pub-list, ul.teach-list {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        ul.pub-list > li, ul.teach-list > li {
+            background: #ffffff;
+            padding: 20px;
+            margin-bottom: 15px;
+            border-radius: 6px;
+            border: 1px solid var(--border-color);
+        }
+
+        .pub-title {
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+
+        .pub-authors {
+            font-style: italic;
+            color: #555;
+            margin: 5px 0;
+        }
+
+        .pub-venue {
+            font-weight: 600;
+            color: #7f8c8d;
+        }
+
+        /* Abstract Toggle Button and Box */
+        .btn-abstract {
+            background: none;
+            border: 1px solid var(--link-color);
+            color: var(--link-color);
+            padding: 4px 10px;
+            font-size: 0.85em;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 10px;
+            transition: all 0.2s ease;
+        }
+
+        .btn-abstract:hover {
+            background: var(--link-color);
+            color: #ffffff;
+            text-decoration: none;
+        }
+
+        .abstract-content {
+            display: none; /* Hidden by default */
+            margin-top: 15px;
+            padding: 15px;
+            background: #f8f9fa;
+            border-left: 4px solid var(--link-color);
+            font-size: 0.9em;
+            color: #444;
+            text-align: justify;
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="container">
+    
+    <div class="profile-section">
+        <div class="profile-img">
+            <img src="./images/me.jpg" alt="Ernest van Wijland">
         </div>
-        <div class="collapse navbar-collapse">
-          <ul class="nav navbar-nav">
-            <li class="active">
-	      <a href="index.html">Home</a>
-	    </li>
-            <li>
-<!--	      <a href="https://scholar.google.com/citations?user=WCa48vcAAAAJ&hl=fr&oi=ao">Publications</a><--!>
-	    </li>
-          </ul>
+        <div class="profile-info">
+            <h1>Ernest van Wijland</h1>
+            <p>
+                PhD student and Teaching Assistant at IRIF, Université Paris-Cité. I am fortunate to have Claire Mathieu and Vincent Cohen-Addad as my advisors.
+            </p>
+            <p>
+                My research interests include Optimization, Algorithms, and AI. I am currently working on approximation algorithms for clustering and online multi-level aggregation.
+            </p>
+            <p>
+                📄 <a href="files/cv.pdf" target="_blank"><strong>My Resume</strong></a>
+            </p>
+            
+            <div class="contact-info">
+                <table>
+                    <tr>
+                        <td><strong>Email:</strong></td>
+                        <td>ernest(dot)vanwijland(at)irif(dot)fr</td>
+                    </tr>
+                </table>
+            </div>
         </div>
-      </div>
     </div>
 
-	  
-	  
-	  <!------------------------------------------------------------------------------- -->
+    <h3>Publications <a href="https://scholar.google.com/citations?hl=fr&user=WCa48vcAAAAJ&view_op=list_works" target="_blank">(Google Scholar)</a></h3>
+    <ul class="pub-list">
+        
+        <li>
+            <div class="pub-title">Spectral Dual Fitting for k-Means</div>
+            <div class="pub-authors">Anand, Charikar, Cohen-Addad, Gao, Grandoni, Lee, Sharma, Van Wijland</div>
+            <div class="pub-venue">In Submission</div>
+            
+            <button class="btn-abstract" onclick="toggleAbstract('abs1', this)">Show Abstract</button>
+            <div id="abs1" class="abstract-content">
+                We give a new dual fitting algorithm which gives improved approximation ratios of \(3+\ln 2 + \varepsilon\ (\approx 3.694)\) and \(4.9+\varepsilon\) for \(k\)-Means in Euclidean and general metrics respectively, significantly improving upon the previously known ratios of \(4+\varepsilon\) and \(5.83\) [Charikar, Cohen-Addad, Gao, Grandoni, Lee, and van Wijland, FOCS'25 and STOC'26]. In particular, our result for Euclidean \(k\)-Means breaks the hardness barrier of \(1+8/e\approx 3.94\) for Metric \(k\)-Means. Prior to our work, no such separation between general and Euclidean metrics was known for \(k\)-Median, \(k\)-Means, or Facility Location in terms of their approximability.<br><br>
+                Unlike prior dual fitting approaches for \(k\)-Means, our new dual fitting algorithm tightly accounts for dual payments while still facilitating an effective dual feasibility analysis. We introduce a new framework that uses spectral analysis for determining the approximation factor of our algorithm.
+            </div>
+        </li>
 
-    <!-- Page content -->
-    <div class="container">
-      <br>
-      <div class="row">
-	
-	  <div class="col-md-3">
-	    <img src="./images/me.jpg" 
-		 class="img-responsive" 
-		 alt="Picture" 
-		 width="250"/>
-	  </div>
-	
+        <li>
+            <div class="pub-title">A \(4+\varepsilon\)-Approximation for Euclidean k-Means via Non-Monotone Dual Fitting</div>
+            <div class="pub-authors">Charikar, Cohen-Addad, Gao, Grandoni, Lee, Van Wijland</div>
+            <div class="pub-venue">STOC 2026</div>
+            
+            <button class="btn-abstract" onclick="toggleAbstract('abs2', this)">Show Abstract</button>
+            <div id="abs2" class="abstract-content">
+                Abstract text for this paper goes here.
+            </div>
+        </li>
 
-	<div class="col-md-6 pic-right">
-	  <span class="visible-xs visible-sm"></span>
-	  <p align="justify">
-          	<strong>  </strong>
+        <li>
+            <a href="https://people.idsia.ch/~grandoni/Pubblicazioni/CCGGLW25focs.pdf" target="_blank" class="pub-title">An Improved Greedy Approximation for (Metric) k-Means</a>
+            <div class="pub-authors">Charikar, Cohen-Addad, Gao, Grandoni, Lee, Van Wijland</div>
+            <div class="pub-venue">FOCS 2025</div>
+            
+            <button class="btn-abstract" onclick="toggleAbstract('abs3', this)">Show Abstract</button>
+            <div id="abs3" class="abstract-content">
+                Abstract text for this paper goes here.
+            </div>
+        </li>
 
-	  <br>
-  
+        <li>
+            <a href="https://arxiv.org/abs/2307.08069" target="_blank" class="pub-title">Faster Approximation Scheme for Euclidean k-TSP</a>
+            <div class="pub-authors">Van Wijland, Zhou</div>
+            <div class="pub-venue">SOCG 2024</div>
 
-PhD student and Teaching Assistant at IRIF, in Université Paris-Cité. I am fortunate to have Claire Mathieu and Vincent Cohen-Addad as my advisors.
-		  
-My research interests include Optimization, Algorithms, and AI. I am currently working on approximation algorithms for clustering and online multi-level aggregation.
+            <button class="btn-abstract" onclick="toggleAbstract('abs4', this)">Show Abstract</button>
+            <div id="abs4" class="abstract-content">
+                Abstract text for this paper goes here.
+            </div>
+        </li>
 
-<br><br>
-<a href="files/cv.pdf">My resume.</a>
-	  </p>
+        <li>
+            <a href="https://pubsonline.informs.org/doi/10.1287/moor.2023.0204" target="_blank" class="pub-title">Maximizing Nash Social Welfare in 2-Value Instances: Delineating Tractability</a>
+            <div class="pub-authors">Akrami, Chaudhury, Hoefer, Mehlhorn, Schmalhofer, Shahkarami, Varricchio, Vermande, Van Wijland</div>
+            <div class="pub-venue">MOOR 2023</div>
 
+            <button class="btn-abstract" onclick="toggleAbstract('abs5', this)">Show Abstract</button>
+            <div id="abs5" class="abstract-content">
+                Abstract text for this paper goes here.
+            </div>
+        </li>
 
-          <br><br>   
-	 <b> Contact information:</b>
-	  <br>
+        <li>
+            <a href="https://ojs.aaai.org/index.php/AAAI/article/view/20402" target="_blank" class="pub-title">Maximizing Nash Social Welfare in 2-Value Instances</a>
+            <div class="pub-authors">Akrami, Chaudhury, Hoefer, Mehlhorn, Schmalhofer, Shahkarami, Varricchio, Vermande, Van Wijland</div>
+            <div class="pub-venue">AAAI 2022</div>
 
-	  
-	  
-	  
-	  <table>
-	   <!-- <tr>
-	      <td> Phone: </td>
-	      <td> +33 (0)1 57  </td>
-	    </tr>
-	   -->
-	    <tr>
-	      <td> Email: ernest(dot)vanwijland(at)irif(dot)fr </a> </td>
-	    </tr>
-	  </table>
-  	</div>
-	</div>
+            <button class="btn-abstract" onclick="toggleAbstract('abs6', this)">Show Abstract</button>
+            <div id="abs6" class="abstract-content">
+                Abstract text for this paper goes here.
+            </div>
+        </li>
 
-	<h3>Publications <a href="https://scholar.google.com/citations?hl=fr&user=WCa48vcAAAAJ&view_op=list_works&gmla=ANZ5fUPufa9H8Q_KA4pmAEuoiXQTDmHZL1oSpfoklFO3n37XEY2g4dEJoy2TqwRApN6vDmsbMN4rdYVs_iTfzpXfNCcaZWUz49YPACuPieJIOgGHpEE84M5W2Zit5ALPWKXDaO7Y74l4r2hpSx__P6k6BryWo4MpY5kZBh0mgJw">(Google Scholar)</a></h3>
-	<ul>
-	<li>Spectral Dual Fitting for k-Means, <i>Anand, Charikar, Cohen-Addad, Gao, Grandoni, Lee, Sharma, Van Wijland</i>, In Submission
-	<p><b>Abstract: </b>
-	We give a new dual fitting algorithm which gives improved approximation ratios of \(3+\ln 2 + \varepsilon\ (\approx 3.694)\) and \(4.9+\varepsilon\) for \(k\)-Means in Euclidean and general metrics respectively, significantly improving upon the previously known ratios of \(4+\varepsilon\) and \(5.83\) [Charikar, Cohen-Addad, Gao, Grandoni, Lee, and van Wijland, FOCS'25 and STOC'26]. In particular, our result for Euclidean \(k\)-Means breaks the hardness barrier of \(1+8/e\approx 3.94\) for Metric \(k\)-Means. Prior to our work, no such separation between general and Euclidean metrics was known for \(k\)-Median, \(k\)-Means, or Facility Location in terms of their approximability.<br>
-    Unlike prior dual fitting approaches for \(k\)-Means, our new dual fitting algorithm tightly accounts for dual payments while still facilitating an effective dual feasibility analysis. We introduce a new framework that uses spectral analysis for determining the approximation factor of our algorithm.</p>
-	</li>
-	<li>A <i>(4+ε)</i>-Approximation for Euclidean k-Means via Non-Monotone Dual Fitting, <i>Charikar, Cohen-Addad, Gao, Grandoni, Lee, Van Wijland</i>, STOC 2026</li>
-	<li><a href="https://people.idsia.ch/~grandoni/Pubblicazioni/CCGGLW25focs.pdf">An Improved Greedy Approximation for (Metric) k-Means</a>, <i>Charikar, Cohen-Addad, Gao, Grandoni, Lee, Van Wijland</i>, FOCS 2025</li>
-	<li><a href="https://arxiv.org/abs/2307.08069">Faster Approximation Scheme for Euclidean k-TSP</a>, <i>Van Wijland, Zhou</i>, SOCG 2024</li>
-	<li><a href="https://pubsonline.informs.org/doi/10.1287/moor.2023.0204">Maximizing Nash Social Welfare in 2-Value Instances: Delineating Tractability</a>, <i>Akrami, Chaudhury, Hoefer, Mehlhorn, Schmalhofer, Shahkarami, Varricchio, Vermande, Van Wijland</i>, MOOR 2023</li>
-	<li><a href="https://ojs.aaai.org/index.php/AAAI/article/view/20402">Maximizing Nash Social Welfare in 2-Value Instances</a>, <i>Akrami, Chaudhury, Hoefer, Mehlhorn, Schmalhofer, Shahkarami, Varricchio, Vermande, Van Wijland</i>, AAAI 2022</li>
-	</ul>
+    </ul>
 
-	<h3>Teaching</h3>
-	<ul>
-		<li>Currently teaching assistant for the second year of Bachelor course "Programming Project" at Université Paris-Cité.
-		<li>Previously teaching assistant for the "Introduction to Python", "Algorithmics Concepts" and "Programming Project" courses.
-	</ul>
-
-	  </p>
+    <h3>Teaching</h3>
+    <ul class="teach-list">
+        <li>Currently teaching assistant for the second year of Bachelor course <strong>"Programming Project"</strong> at Université Paris-Cité.</li>
+        <li>Previously teaching assistant for the <strong>"Introduction to Python"</strong>, <strong>"Algorithmics Concepts"</strong>, and <strong>"Programming Project"</strong> courses.</li>
+    </ul>
 
 </div>
 
-    <!-- javascript -->
-    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
-    <script src="dist/js/bootstrap.min.js"></script>
-  
-  </body>
+<script>
+    function toggleAbstract(id, buttonElement) {
+        var x = document.getElementById(id);
+        if (x.style.display === "block") {
+            x.style.display = "none";
+            buttonElement.innerText = "Show Abstract";
+        } else {
+            x.style.display = "block";
+            buttonElement.innerText = "Hide Abstract";
+        }
+    }
+</script>
+
+</body>
 </html>
