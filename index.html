@@ -227,6 +227,23 @@
     <ul class="pub-list">
 
         <li>
+            <a href="https://arxiv.org/pdf/2607.14654" target="_blank" class="pub-title">Efficient Prover–Estimator Debate via Signed Level-Set Optimization</a>
+            <div class="pub-authors">Springer, Van Wijland</div>
+            <div class="pub-venue">In Submission</div>
+            
+            <button class="btn-abstract" onclick="toggleAbstract('abs9', this)">Show Abstract</button>
+            <div id="abs9" class="abstract-content">
+                Recursive debate makes complex claims verifiable by reducing them to subclaims that a human can eventually judge. Its weakness is obfuscation: a dishonest prover can hide an error among subclaims that an honest opponent cannot efficiently identify. Brown-Cohen et al. (2026) introduced prover-estimator debate, replacing the search for a false subclaim with probabilistic predictions over all submitted subclaims. Their work showed that suitable probability estimators exist, but their argument uses reference answers unavailable to the estimator, which they note makes it non-executable, and provides a circuit-size upper bound exponential in the branching width. We here explore the conditions under which estimators can instead be constructed efficiently.  When decompositions cannot profitably change the meaning of a claim, estimator construction reduces to local optimization guided by whether the prover alleges that the current estimate is too high or too low. Assuming efficient signed level-set optimization, our algorithm uses resettable access to a fixed prover and simulated debate scores, never hidden reference answers, and outputs an estimator satisfying a soundness bound against that prover, with construction and evaluation costs polynomial in the mechanism's parameters. Conversely, without this semantic restriction, a uniform compiler for a promised class of instances would yield randomized polynomial-time algorithms for every polynomial-time verifiable total search relation, even when the local gates are projections or constants. Thus, efficient local optimization alone is insufficient in the worst case.    
+            </div>
+
+            <div class="pub-tags">
+                <span class="pub-tag">AI</span>
+                <span class="pub-tag">Game Theory</span>
+                <span class="pub-tag">Complexity</span>
+            </div>
+        </li>
+        
+        <li>
             <a href="https://arxiv.org/pdf/2608.09538v2" target="_blank" class="pub-title">TCS-BENCH: Benchmarking State-of-the-Art Generative AI Theoretical Computer Science Research Ability</a>
             <div class="pub-authors">Cohen-Addad∗, Paparas∗, Van Wijland∗, Springer, Canitrot-Paradis, Lin, Woodruff, Kumarappan, Jayaram, Das, Jain, Svensson, Lattanzi, Balunovic, Weber, Mirrokni (*: co-first authors)</div>
             <div class="pub-venue">In Submission</div>
@@ -246,7 +263,7 @@
         <li>
             <a href="https://arxiv.org/pdf/2607.14654" target="_blank" class="pub-title">Spectral Dual Fitting for \(k\)-Means</a>
             <div class="pub-authors">Anand, Charikar, Cohen-Addad, Gao, Grandoni, Lee, Sharma, Van Wijland</div>
-            <div class="pub-venue">In Submission</div>
+            <div class="pub-venue">SODA 2027</div>
             
             <button class="btn-abstract" onclick="toggleAbstract('abs1', this)">Show Abstract</button>
             <div id="abs1" class="abstract-content">
